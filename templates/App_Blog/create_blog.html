@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block title_block %}Creat Blog{% endblock %}
+{% block body_block %}
+<h2>Writer your Blog here:</h2>
+{% comment %} MUST NEED THIS when upload image enctype="multipart/form-data" {% endcomment %}
+<form method="POST" enctype="multipart/form-data">
+    {{ form|crispy }}
+    {% csrf_token %}
+    <button type="submit" class="btn btn-success">Publish</button>
+</form>
+
+
+{% endblock %}
